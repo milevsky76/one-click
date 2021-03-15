@@ -3,14 +3,12 @@ define("HIDE_SIDEBAR", true);
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Корзина");
 ?><?$APPLICATION->IncludeComponent(
-	"dvi:click", 
-	".default", 
-	array(
-		"COMPONENT_TEMPLATE" => ".default",
-		"LOCATED_BASKET" => "N",
-		"ELEMENT_ID" => ""
-	),
-	false
+	"dvi:click",
+	"",
+	Array(
+		"ELEMENT_ID" => "",
+		"LOCATED_BASKET" => "Y"
+	)
 );?><?$APPLICATION->IncludeComponent(
 	"bitrix:sale.basket.basket",
 	"bootstrap_v4",
