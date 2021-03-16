@@ -122,3 +122,15 @@ if (isset($templateData['JS_OBJ']))
 		<?
 	}
 }
+
+$APPLICATION->IncludeComponent(
+	"dvi:click",
+	".default",
+	Array(
+		"COMPONENT_TEMPLATE" => ".default",
+		"ELEMENT_ID" => $arParams["ELEMENT_ID"],
+		"LOCATED_BASKET" => "N"
+	)
+);
+
+var_dump($arParams["ELEMENT_ID"]);

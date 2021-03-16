@@ -6,28 +6,19 @@ BX(() => {
 	BX.bind(BX("click-buy"), "click", function(e) {
 		e.preventDefault();
 
+		let prodId = BX("click-data");
+		let prodCount = document.getElementsByClassName("product-item-amount-field")[0];
+		let userPhone = BX("click-phone");		
 		let mode = BX("click-data").getAttribute("data-basket");
-		let nameAction = "";
-		let userData = {};
-		let userPhone = BX("click-phone").value;
-
-		if (mode !== "Y") {
-			nameAction = "product";
-			userData = {
-				"phone" : userPhone,
-				"id" : BX("click-data").getAttribute("data-id"),
-				"count" : document.getElementsByClassName("product-item-amount-field")[0].value
-			};
-		} else {
-			nameAction = "basket";
-			userData = {
-				"phone" : userPhone
-			};
-		}
-
-        BX.ajax.runComponentAction("dvi:click", nameAction, {
+		
+        BX.ajax.runComponentAction("dvi:click", "main", {
 			mode: "class",
-			data: userData	
+			data: {
+				"prodId" : (prodId) ? prodId.getAttribute("data-id") : "",
+				"count" : (prodCount) ? prodCount.value : "",
+				"phone" : (userPhone) ? BX("click-phone").value : "",
+				"type" : mode
+			}	
 		}).then(function (response) { // success
 			console.log(1);
 			console.log(response);

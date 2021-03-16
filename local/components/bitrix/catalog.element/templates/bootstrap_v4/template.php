@@ -760,15 +760,6 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-'.$arParams['TEMPLATE_TH
 							<?
 						}
 						?>
-						<?$APPLICATION->IncludeComponent(
-							"dvi:click",
-							".default",
-							Array(
-								"COMPONENT_TEMPLATE" => ".default",
-								"ELEMENT_ID" => $arParams["ELEMENT_ID"],
-								"LOCATED_BASKET" => "N"
-							)
-						);?>
 					</div>
 				</div>
 			</div>
