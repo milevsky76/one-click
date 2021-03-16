@@ -12,7 +12,7 @@ BX(() => {
 		let mode = BX("click-data").getAttribute("data-basket");
 		
         BX.ajax.runComponentAction("dvi:click", "main", {
-			mode: "class",
+			mode: "ajax", //ajax
 			data: {
 				"prodId" : (prodId) ? prodId.getAttribute("data-id") : "",
 				"count" : (prodCount) ? prodCount.value : "",
