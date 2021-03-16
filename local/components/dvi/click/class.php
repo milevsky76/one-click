@@ -15,7 +15,11 @@ class CCustomAjax extends CBitrixComponent implements Controllerable
 {
 	public function configureActions()
 	{
-		return [];
+		return [
+			"main" => [
+                'prefilters' => [],
+            ],
+		];
 	}
  
 	function executeComponent()

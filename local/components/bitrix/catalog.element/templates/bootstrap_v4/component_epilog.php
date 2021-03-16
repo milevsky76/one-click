@@ -132,5 +132,3 @@ $APPLICATION->IncludeComponent(
 		"LOCATED_BASKET" => "N"
 	)
 );
-
-var_dump($arParams["ELEMENT_ID"]);

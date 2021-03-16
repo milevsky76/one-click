@@ -20,16 +20,11 @@ BX(() => {
 				"type" : mode
 			}	
 		}).then(function (response) { // success
-			console.log(1);
-			console.log(response);
 			BX("click-one").hidden = true;
 			BX("answer").textContent = "Заказ оформлен!";		
 		}, function (response) { // error
-			console.log(2);
-			console.log(response);
 			BX("click-one").hidden = true;
 			BX("answer").textContent = "Заказ не оформлен!";
-			//BX("answer").textContent = response.errors[0].message;
 		});
     });
 });
